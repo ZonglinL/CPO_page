@@ -184,7 +184,7 @@
         <h2 class="title is-3">Architecture of The Autoencoder</h2>
         <div class="content has-text-justified">
           <p>
-            Our autoencoder takes advantage of optical flow estimation to warp encoder features of neighboring frames and fused them with the decoder features via cross-attention.
+            Our autoencoder takes advantage of temporal information and optical flow to guide reconstruction.
           </p>
         </div>
       </div>
@@ -193,7 +193,7 @@
     <img src="static/images/Arch.jpg" alt="arch"/>
       </img>
       <h2 class="subtitle has-text-centered">
-       Architecture of the autoencoder. The encoder is in green dashed boxes, and the decoder contains all remaining parts. The output of consecutive Brownian Bridge diffusion will be fed to the VQ layer. The features of I<sub>0</sub>, I<sub>1</sub> at different down-sampling rate will be sent to the cross-attention module at Up Sample Block in the Decoder
+      (a) Model Pipeline. The Image Encoder is shared across all frames, and temporal blocks extract temporal information in the latent space. (b) Multi-level Feature Sharing. The Image Encoder and Decoder consist of several levels of resolution due to downsampling/upsampling latent features. At the ith level of the encoder and the decoder, features from I0 and I1 in the encoder are warped and concatenated with the original copy (when the downsampling rate is larger than 8, warped features are excluded). The concatenated features are used as keys and values in cross attention where the decoder feature at the same level is the query. (c) Encoder/Decoder Temporal Block. Each temporal block consists of two sets of 3D convolution + attention. In the decoder, the second attention is cross-attention between the intermediate frame (query) and all frames (key and value) to aggregate the video feature into one feature map. (d) 3D-wavelet Feature Gating. Wavelet information is extracted from the input video clip and encoded by CNNs. A sigmoid activation is applied, and the result is element-wise multiplied by the output of the Image Encoder with a skip connection.
       </h2>
     </div>
   </div>
