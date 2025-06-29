@@ -124,6 +124,12 @@ body {
   justify-content: center;       /* Vertical centering */
   align-items: center;           /* Horizontal centering */
 }
+
+.results-carousel .item img {
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
 .results-carousel video {
   margin: 0;
 }
