@@ -134,4 +134,22 @@ body {
 }
 
 
+/* Force every slide to have a minimum height and flex centering */
+#results-carousel .slider-slide {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 500px !important;
+  height: 500px !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure the images scale down if they are too tall */
+#results-carousel .slider-slide img {
+  max-height: 70vh !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
 
