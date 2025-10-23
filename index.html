@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="ICCV2025">
-  <meta property="og:title" content="Video Interpolation"/>
-  <meta property="og:description" content="Video Interpolation"/>
-  <!--<meta property="og:url" content="https://zonglinl.github.io/tlbvfi_page.github.io/"/>-->
+  <meta name="description" content="NeurIPS2025">
+  <meta property="og:title" content="Diffusoin"/>
+  <meta property="og:description" content="Diffusion"/>
+  <!--<meta property="og:url" content="https://zonglinl.github.io/CPO_page/"/>-->
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
@@ -32,7 +32,7 @@
           margin-down: auto;
       }
   </style>
-  <title>TLB-VFI: Temporal-Aware Latent Brownian Bridge Diffusion for Video Frame Interpolation</title>
+  <title>CPO: Condition Preference Optimization for Controllable Image Generation</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -61,11 +61,15 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">TLB-VFI: Temporal-Aware Latent Brownian Bridge Diffusion for Video Frame Interpolation</h1>
+            <h1 class="title is-1 publication-title">CPO: Condition Preference Optimization forControllable Image Generation</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
                 <a href="https://zonglinl.github.io/" target="_blank">Zonglin Lyu</a>,</span>
+                <span class="author-block">
+                <a href="https://liming-ai.github.io/" target="_blank">Ming Li</a>,</span>
+                <span class="author-block">
+                <a href="https://openreview.net/profile?id=~Xinxin_Liu4" target="_blank">Xnxin Liu</a>,</span>
                   <span class="author-block">
                     <a href="https://www.crcv.ucf.edu/chenchen/" target="_blank">Chen Chen</a>
                   </span>
@@ -73,14 +77,14 @@
                 <span class="author-block">
                   </div>
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Center for Research in Compter Vision, University of Central Florida<br> <b>ICCV 2025</b></span>
+                    <span class="author-block">Institute of Artificial Intelligence, University of Central Florida<br> <b>NeurIPS 2025</b></span>
                   </div>
                   
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2507.04984" target="_blank"
+                        <a href="TODO" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -91,7 +95,7 @@
                       </>
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/ZonglinL/TLBVFI" target="_blank"
+                    <a href="https://github.com/ZonglinL/CPO" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -103,7 +107,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2507.04984" target="_blank"
+                  <a href="TODO" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -124,7 +128,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <iframe height="480" width="960" 
-            src="https://www.youtube.com/embed/w5XD5s9S8dY"> 
+            src="TODO"> 
       </iframe> 
     </div>
   </div>
@@ -140,8 +144,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-           Video Frame Interpolation (VFI) aims to predict the intermediate frame I<sub>n</sub> (we use n to denote time in videos to avoid notation overload with the timestep t in diffusion models) based on two consecutive neighboring frames I<sub>0</sub> and I<sub>1</sub>. Recent approaches apply diffusion models (both image-based and video-based) in this task and achieve strong performance. However, image-based diffusion models are unable to extract temporal information and are relatively inefficient compared to non-diffusion methods. Video-based diffusion models can extract temporal information, but they are too large in terms of training scale, model size, and inference time. To mitigate the above issues, we propose Temporal-Aware Latent Brownian Bridge Diffusion for Video Frame Interpolation (TLB-VFI), an efficient video-based diffusion model. By extracting rich temporal information from video inputs through our proposed 3D-wavelet gating and temporal-aware autoencoder, our method achieves <b>20%</b> improvement in FID on the most challenging datasets over recent SOTA of image-based diffusion models. Meanwhile, due to the existence of rich temporal information, our method achieves strong performance while having 3x fewer parameters. Such a parameter reduction results in 2.3x speed up. By incorporating optical flow guidance, our method requires 9000x less training data and achieves over 20x fewer parameters than video-based diffusion models.
+          <p>To enhance controllability in text-to-image generation, ControlNet introduces image-based control signals, while ControlNet++ improves pixel-level cycle consistency between generated images and the input control signal. To avoid the prohibitive cost of back-propagating through the sampling process, ControlNet++ optimizes only low-noise timesteps (e.g., $t < 200$) using a single-step approximation, which not only ignores the contribution of high-noise timesteps but also introduces additional approximation errors. A straightforward alternative for optimizing controllability across all timesteps is Direct Preference Optimization (DPO), a fine-tuning method that increases model preference for more controllable images ($I^{w}$) over less controllable ones ($I^{l}$). However, due to uncertainty in generative models, it is difficult to ensure that win--lose image pairs differ only in controllability while keeping other factors, such as image quality, fixed. To address this, we propose performing preference learning over control conditions rather than generated images. Specifically, we construct winning and losing control signals, $\mathbf{c}^{w}$ and $\mathbf{c}^{l}$, and train the model to prefer $\mathbf{c}^{w}$. This method, which we term \textit{Condition Preference Optimization} (CPO), eliminates confounding factors and yields a low-variance training objective. Our approach theoretically exhibits lower contrastive loss variance than DPO and empirically achieves superior results. Moreover, CPO requires less computation and storage for dataset curation. Extensive experiments show that CPO significantly improves controllability over the state-of-the-art ControlNet++ across multiple control types: over $10\%$ error rate reduction in segmentation, 70 -- 80% in human pose, and consistent 2%--5% reductions in edge and depth maps. Here, the error rate is defined as the difference between the evaluated controllability and the oracle results.
           </p>
         </div>
       </div>
@@ -158,7 +161,7 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-              Image diffusion-based methods in Video Frame Interpolation (VFI) achieves strong performance but fails to incorporate temporal information. Video diffusion-based models are able to extract temporal information but requires significantly larger datasets. We incorporate temporal information extraction and optical flow guidance and propose our temporal-aware Brownian Bridge Diffusion to improve the temporal consistency of generated frames and reduce the computation costs.
+              TODO
           </p>
         </div>
       </div>
