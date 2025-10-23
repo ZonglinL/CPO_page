@@ -187,7 +187,7 @@
         <h2 class="title is-3">Key Difference with DPO</h2>
         <div class="content has-text-justified">
           <p>
-            To construct DPO dataset, we need to generate a group (we set it as 20) and find the best controllable (I<sup>w</sup>) and worst controllable ones (I<sup>l</sup>). Then we use ImageReward score to make sure the reward score of I<sup>w</sup> is obviously better. However, we only need to generate one sample I and detect the conditions from I as <b>c<sup>l</sup>. The ground truth condition (or the condition detects from the ground truth image) serves as <b>c<sup>w</sup></b>. Importantly, in DPO, the conditions may not be easy to observe from the image, making it hard for the model to learn the preference.
+            To construct DPO dataset, we need to generate a group (we set it as 20) and find the best controllable (I<sup>w</sup>) and worst controllable ones (I<sup>l</sup>). Then we use ImageReward score to make sure the reward score of I<sup>w</sup> is obviously better. However, we only need to generate one sample I and detect the conditions from I as <b>c<sup>l</sup></b>. The ground truth condition (or the condition detects from the ground truth image) serves as <b>c<sup>w</sup></b>. Importantly, in DPO, the conditions may not be easy to observe from the image, making it hard for the model to learn the preference.
           </p>
         </div>
       </div>
@@ -203,7 +203,7 @@
 <!-- End Teaser -->
   
 
-<!-- Results -->
+<!-- Quantitatve Results -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
@@ -238,275 +238,74 @@
        <div class="item">
         <!-- Your image here -->
         <img src="static/images/DINO-Controllability.png" alt="DINO-C"/>
-        <h2 class="subtitle has-text-centered">
+        <h4 class="subtitle has-text-centered">
          DINO-v2 adapter generally improves the controllability. &uarr means the higher the better, and &darr means the lower the better. Click the "next" icon to see the ablation study of DINO-v2 adapter on FID/CLIP.
-        </h2>
+        </h4>
       </div>
           
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/DINO-FID.png" width="90%" alt="DINO-F"/>
-        <h2 class="subtitle has-text-centered">
+        <h4 class="subtitle has-text-centered">
          DINO-v2 adapter generally improves the FID and CLIP score. &uarr means the higher the better, and &darr means the lower the better.
-        </h2>
+        </h4>
   </div>
 </div>
 </div>
 </section>
-<!-- End Results -->
+<!-- End Quantitative Results -->
   
-<!-- Multiframe -->
-
-<!-- Image carousel -->
+<!-- Qualitative Results -->
 <section class="hero is-small">
-    <div class="container is-max-desktop">
+  <div class="hero-body">
+    <div class="container">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Multi-frame Interpolation</h2>
+        <h2 class="title is-3">Qualitative Results</h2>
         <div class="content has-text-justified">
           <p>
-          We interpolate 7 frames between two frames and visualize the generated video with <b>our method</b> and <b>PerVFI</b>. Click "next" icon to view more images.
+            Our methods achieve the state-of-the-art results in Controllability without impact on image quality and text-to-image alignment. Recent work (ControlAR) reveals that DINO-v2 can improve the controllability and generation quality in controllable generation task. This observation also exists in Diffusion-based method.
           </p>
         </div>
       </div>
     </div>
-    </div>
-  <div class="hero-body">
-    <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
         <!-- Your image here -->
-        <img src="static/images/vid_0_im_0.png" alt="vid0im1"/>
-        <h2 class="subtitle has-text-centered">
-          The starting frame of multiframe interpolation. Click the "next" icon to see the ending frame.
-        </h2>
+        <img src="static/images/Controllability.png" alt="Controllability"/>
+        <h4 class="subtitle has-text-centered">
+          Quantitative Comparisons with recent SOTAs on Controllability. &uarr means the higher the better, and &darr means the lower the better. Since ControlAR uses CFG scale of 4 while diffusion-based methods use 7.5, we evaluate our method under CFG scale 4 to compare with ControlAR and CFG scale 7.5 to compare with other methods. Under the same setup, our method achieves the state-of-the-art results in Controllability. Click the "next" icon to see the quantitative comparison on FID/CLIP between our method and recent SOTAs.
+        </h4>
         </div>
 
-        <div class="item">
+       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/vid_0_im_1.png" alt="vid0im1"/>
-        <h2 class="subtitle has-text-centered">
-          The ending frame of multiframe interpolation. Click the "next" icon to see our interpolation result.
-        </h2>
-        </div>
+        <img src="static/images/FID.png" alt="FID"/>
+        <h4 class="subtitle has-text-centered">
+          Quantitative Comparisons with recent SOTAs on FID/CLIP. &uarr means the higher the better, and &darr means the lower the better. Click the "next" icon to see the ablation study of DINO-v2 adapter on Controllability.
+        </h4>
+      </div>
+
         
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/our0.gif" alt="our0"/>
-        <h2 class="subtitle has-text-centered">
-          Multiframe interpolation result of <b>our method</b>. The first and the last frame are given, the middle 7 frames are interpolated. Click the "next" icon to see the result of PerVFI
-        </h2>
+        <img src="static/images/DINO-Controllability.png" alt="DINO-C"/>
+        <h4 class="subtitle has-text-centered">
+         DINO-v2 adapter generally improves the controllability. &uarr means the higher the better, and &darr means the lower the better. Click the "next" icon to see the ablation study of DINO-v2 adapter on FID/CLIP.
+        </h4>
       </div>
           
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/per0.gif" alt="per0"/>
-        <h2 class="subtitle has-text-centered">
-          Multi-frame interpolation result of <b>PerVFI</b>. The first and the last frame are given, the middle 7 frames are interpolated. The tires are distorted.
-        </h2>
+        <img src="static/images/DINO-FID.png" width="90%" alt="DINO-F"/>
+        <h4 class="subtitle has-text-centered">
+         DINO-v2 adapter generally improves the FID and CLIP score. &uarr means the higher the better, and &darr means the lower the better.
+        </h4>
   </div>
 </div>
 </div>
 </section>
-<!-- End image carousel -->
-  
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/vid_1_im_0.png" alt="vid2im1"/>
-        <h2 class="subtitle has-text-centered">
-          The starting frame of multiframe interpolation. Click the "next" icon to see the ending frame.
-        </h2>
-        </div>
-
-        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/vid_1_im_1.png" alt="vid2im1"/>
-        <h2 class="subtitle has-text-centered">
-          The ending frame of multiframe interpolation. Click the "next" icon to see our interpolation result.
-        </h2>
-        </div>
-        
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/our1.gif" alt="our2"/>
-        <h2 class="subtitle has-text-centered">
-          Multiframe interpolation result of <b>our method</b>. The first and the last frame are given, the middle 7 frames are interpolated. Click the "next" icon to see the result of PerVFI
-        </h2>
-      </div>
-          
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/per1.gif" alt="ldm2"/>
-        <h2 class="subtitle has-text-centered">
-          Multi-frame interpolation result of <b>PerVFI</b>. The first and the last frame are given, the middle 7 frames are interpolated. The wings are distorted.
-        </h2>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/vid_2_im_0.png" alt="vid3im0"/>
-        <h2 class="subtitle has-text-centered">
-          The starting frame of multiframe interpolation. Click the "next" icon to see the ending frame.
-        </h2>
-        </div>
-
-        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/vid_2_im_1.png" alt="vid2im1"/>
-        <h2 class="subtitle has-text-centered">
-          The ending frame of multiframe interpolation. Click the "next" icon to see our interpolation result.
-        </h2>
-        </div>
-        
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/our2.gif" alt="our3"/>
-        <h2 class="subtitle has-text-centered">
-          Multiframe interpolation result of <b>our method</b>. The first and the last frame are given, the middle 7 frames are interpolated. Click the "next" icon to see the result of PerVFI
-        </h2>
-      </div>
-          
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/per2.gif" alt="ldm3"/>
-        <h2 class="subtitle has-text-centered">
-          Multi-frame interpolation result of <b>PerVFI</b>. The first and the last frame are given, the middle 7 frames are interpolated. The hand is distorted.
-        </h2>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-  
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/vid_3_im_0.png" alt="vid1im1"/>
-        <h2 class="subtitle has-text-centered">
-          The starting frame of multiframe interpolation. Click the "next" icon to see the ending frame.
-        </h2>
-        </div>
-
-        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/vid_3_im_1.png" alt="vid0im1"/>
-        <h2 class="subtitle has-text-centered">
-          The ending frame of multiframe interpolation. Click the "next" icon to see our interpolation result.
-        </h2>
-        </div>
-        
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/our3.gif" alt="our1"/>
-        <h2 class="subtitle has-text-centered">
-          Multiframe interpolation result of <b>our method</b>. The first and the last frame are given, the middle 7 frames are interpolated. Click the "next" icon to see the result of PerVFI
-        </h2>
-      </div>
-          
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/per3.gif" alt="ldm1"/>
-        <h2 class="subtitle has-text-centered">
-          Multi-frame interpolation result of <b>PerVFI</b>. The first and the last frame are given, the middle 7 frames are interpolated. The eye is distorted.
-        </h2>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-<h1 class="subtitle has-text-centered">
-<b>More Multiframe Interpolation Visualization of our method.</b> We interpolate 7 frames between two frames.
-</h1>
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item" >
-        <!-- Your image here -->
-        <img src="static/images/our4.gif" alt="our4" />
-        <h2 class="subtitle has-text-centered">
-          Click the "next" icon to see more.
-        </h2>
-        </div>
-
-        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/our5.gif" alt="our5" class="center"/>
-        <h2 class="subtitle has-text-centered">
-          Click the "next" icon to see more.
-        </h2>
-        </div>
-        
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/our6.gif" alt="our6" class="center"/>
-        <h2 class="subtitle has-text-centered">
-          Click the "next" icon to see more.
-        </h2>
-      </div>
-          
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/our7.gif" alt="our7" class="center"/>
-        <h2 class="subtitle has-text-centered">
-         Click the "next" icon to see more.
-        </h2>
-      </div>
-
-
-        <div class="item" >
-        <!-- Your image here -->
-        <img src="static/images/new0.gif" alt="new0" />
-        <h2 class="subtitle has-text-centered">
-          Click the "next" icon to see more.
-        </h2>
-        </div>
-
-        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/new1.gif" alt="new1" class="center"/>
-        <h2 class="subtitle has-text-centered">
-          Click the "next" icon to see more.
-        </h2>
-        </div>
-        
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/new2.gif" alt="new2" class="center"/>
-        <h2 class="subtitle has-text-centered">
-          Click the "next" icon to see more.
-        </h2>
-      </div>
-          
-</div>
-</div>
-</section>
-
+<!-- End Quantitative Results -->
 
 
   
