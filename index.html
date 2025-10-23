@@ -161,7 +161,7 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-              Instead of Contrasting images, our proposed method contrast conditions directly. As a result, the model sees a clear contrasting signal from the conditions and learns to improve the controllabiliy.
+              Recent method such as ControlNet++ improves the controllability of ConrolNet, but its training is not applicable to all diffusion timesteps. Diffusion DPO is a nature solution that can be applied to all timesteps to improve controllability by prefer I<sup>w</sup> (better controllability) over I<sup>l</sup> (weaker controllability), but some types of conditions such as edges are hard o observe in raw images which prevent model from learning a clear preference signal. Moreover, it is also challenging to ensure other factors such as quality of I<sup>w</sup> is better than or the same as I<sup>l</sup>, which injects noise for preference signal. Therefore, we propose CPO: Condition Preference Optimization to improve the controllability of image generation model. Instead of Contrasting images, our proposed method contrast conditions directly. As a result, the model sees a clear contrasting signal from the conditions and learns to improve the controllabiliy.
           </p>
         </div>
       </div>
@@ -200,7 +200,7 @@
     </div>
   </div>
 </section>
-<!-- End Architecture image -->
+<!-- End Teaser -->
   
 
 <!-- Results -->
