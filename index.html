@@ -187,7 +187,7 @@
         <h2 class="title is-3">Key Difference with DPO</h2>
         <div class="content has-text-justified">
           <p>
-            To construct DPO dataset, we need to generate a group (we set it as 20) and find the best controllable (I<sup>w</sup>) and worst controllable ones (I<sup>l</sup>). Then we use ImageReward score to make sure the reward score of I<sup>w</sup> is obviously better. However, we only need to generate one sample I and detect the conditions from I as <b>c<sup>l</sup>. The ground truth condition (or the condition detects from the ground truth image) serves as <b>c<sup>w</sup>. Importantly, in DPO, the conditions may not be easy to observe from the image, making it hard for the model to learn the preference.
+            To construct DPO dataset, we need to generate a group (we set it as 20) and find the best controllable (I<sup>w</sup>) and worst controllable ones (I<sup>l</sup>). Then we use ImageReward score to make sure the reward score of I<sup>w</sup> is obviously better. However, we only need to generate one sample I and detect the conditions from I as <b>c<sup>l</sup>. The ground truth condition (or the condition detects from the ground truth image) serves as <b>c<sup>w</sup></b>. Importantly, in DPO, the conditions may not be easy to observe from the image, making it hard for the model to learn the preference.
           </p>
         </div>
       </div>
