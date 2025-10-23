@@ -209,9 +209,10 @@
     <div class="container">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Results</h2>
+        <h2 class="title is-3">Quantitative Results</h2>
         <div class="content has-text-justified">
           <p>
+            Our methods achieve the state-of-the-art results in Controllability without impact on image quality and text-to-image alignment. Recent work (ControlAR) reveals that DINO-v2 can improve the controllability and generation quality in controllable generation task. This observation also exists in Diffusion-based method.
           </p>
         </div>
       </div>
@@ -219,34 +220,34 @@
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item">
         <!-- Your image here -->
-        <img src="static/images/quant.png" alt="quantitative"/>
-        <h2 class="subtitle has-text-centered">
-          Quantitative Comparison between our method and recent SOTAs in LPIPS/FloLPIPS/FID (the lower the better). The best performance are <b>boldfaced</b>, and the second best performance are <u>underlined</u>.  Click the "next" icon to see the qualitative comparison between our method and recent SOTAs.
-        </h2>
+        <img src="static/images/Controllability.png" alt="Controllability"/>
+        <h4 class="subtitle has-text-centered">
+          Quantitative Comparisons with recent SOTAs on Controllability. &uarr means the higher the better, and &darr means the lower the better. Since ControlAR uses CFG scale of 4 while diffusion-based methods use 7.5, we evaluate our method under CFG scale 4 to compare with ControlAR and CFG scale 7.5 to compare with other methods. Under the same setup, our method achieves the state-of-the-art results in Controllability. Click the "next" icon to see the quantitative comparison on FID/CLIP between our method and recent SOTAs.
+        </h4>
         </div>
 
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/visual1.png" alt="sota"/>
-        <h2 class="subtitle has-text-centered">
-          Qualitative comparison between our method and recent SOTAs. Images cropped in <font color="blue"> blue boxes </font> are displayed for comparison, and <font color = "red">red circles</font> highlight our stronger performance. Click the "next" icon to see additional qualitative results.
-        </h2>
+        <img src="static/images/FID.png" alt="FID"/>
+        <h4 class="subtitle has-text-centered">
+          Quantitative Comparisons with recent SOTAs on FID/CLIP. &uarr means the higher the better, and &darr means the lower the better. Click the "next" icon to see the ablation study of DINO-v2 adapter on Controllability.
+        </h4>
       </div>
 
         
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/visual2.png" alt="sota"/>
+        <img src="static/images/DINO-Controllability.png" alt="DINO-C"/>
         <h2 class="subtitle has-text-centered">
-          Additional Qualitative comparison between our method and recent SOTAs. Images cropped in <font color="blue"> blue boxes </font> are displayed for comparison, and <font color = "red">red circles</font> highlight our stronger performance. Click the "next" icon to see additional qualitative results.
+         DINO-v2 adapter generally improves the controllability. &uarr means the higher the better, and &darr means the lower the better. Click the "next" icon to see the ablation study of DINO-v2 adapter on FID/CLIP.
         </h2>
       </div>
           
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/visual3.png" width="90%" alt="ldm"/>
+        <img src="static/images/DINO-FID.png" width="90%" alt="DINO-F"/>
         <h2 class="subtitle has-text-centered">
-         Additional Qualitative comparison between our method and recent SOTAs. Images cropped in <font color="blue"> blue boxes </font> are displayed for comparison, and <font color = "red">red circles</font> highlight our stronger performance.
+         DINO-v2 adapter generally improves the FID and CLIP score. &uarr means the higher the better, and &darr means the lower the better.
         </h2>
   </div>
 </div>
