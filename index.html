@@ -169,9 +169,9 @@
     <div class="hero-body">
     <img src="static/images/overview.png" alt="overview"/>
       </img>
-      <h2 class="subtitle has-text-centered">
+      <h4 class="subtitle has-text-centered">
         (a) DPO learns to prefer I<sup>w</sup> over I<sup>l</sup>. (b) CPO learns to prefer <b>c<sup>w</sup></b> over <b>c<sup>l</sup></b>.
-      </h2>
+      </h4>
     </div>
   </div>
 </section>
@@ -179,25 +179,24 @@
 
 
 
-<!-- Architecture image-->
+<!-- Teaser-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Architecture of The Autoencoder</h2>
+        <h2 class="title is-3">Key Difference with DPO</h2>
         <div class="content has-text-justified">
           <p>
-            Our autoencoder takes advantage of temporal information and optical flow to guide reconstruction.
+            To construct DPO dataset, we need to generate a group (we set it as 20) and find the best controllable (I<sup>w</sup>) and worst controllable ones (I<sup>l</sup>). Then we use ImageReward score to make sure the reward score of I<sup>w</sup> is obviously better. However, we only need to generate one sample I and detect the conditions from I as <b>c<sup>l</sup>. The ground truth condition (or the condition detects from the ground truth image) serves as <b>c<sup>w</sup>. Importantly, in DPO, the conditions may not be easy to observe from the image, making it hard for the model to learn the preference.
           </p>
         </div>
       </div>
     </div>
     <div class="hero-body">
-    <img src="static/images/Arch.jpg" alt="arch"/>
+    <img src="static/images/Teaser.png" alt="arch"/>
       </img>
-      <h2 class="subtitle has-text-centered">
-      (a) Model Pipeline. The Image Encoder is shared across all frames, and temporal blocks extract temporal information in the latent space. (b) Multi-level Feature Sharing. The Image Encoder and Decoder consist of several levels of resolution due to downsampling/upsampling latent features. At the ith level of the encoder and the decoder, features from I0 and I1 in the encoder are warped and concatenated with the original copy (when the downsampling rate is larger than 8, warped features are excluded). The concatenated features are used as keys and values in cross attention where the decoder feature at the same level is the query. (c) Encoder/Decoder Temporal Block. Each temporal block consists of two sets of 3D convolution + attention. In the decoder, the second attention is cross-attention between the intermediate frame (query) and all frames (key and value) to aggregate the video feature into one feature map. (d) 3D-wavelet Feature Gating. Wavelet information is extracted from the input video clip and encoded by CNNs. A sigmoid activation is applied, and the result is element-wise multiplied by the output of the Image Encoder with a skip connection.
-      </h2>
+      <h4 class="subtitle has-text-centered"> (a) dataset generation process of DPO. (b) dataset generation process of CPO. (c) Even with ImageReward filtering, DPO dataset still cannot ensure I<sup>w</sup> achieves bettter quality (Pose example, artifact in red circle) than I<sup>l</sup>, resulting in noisy preference. Moreover, conditions like edges are hardly observable in raw images (Canny example), which can confuse the model. CPO resolves this issue by directly contrasting conditions.
+      </h4>
     </div>
   </div>
 </section>
